@@ -109,7 +109,7 @@ public:
 
 	virtual std::string _getSearchText() const
 	{
-		return 0;
+		return "";
 	}
 
 	virtual void onSetHighlight() const // When highlight, really do highlight the label

@@ -37,7 +37,7 @@ class LLPanelPresetsPulldown : public LLPanelPulldown
 public:
     LLPanelPresetsPulldown();
     bool postBuild() override;
-    void onVisibilityChange(bool new_visibility);
+    void onVisibilityChange(bool new_visibility) override;
     void populatePanel();
 
 private:

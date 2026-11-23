@@ -140,10 +140,6 @@ private:
 	LLUICtrl*					mProjectorResX;
 	LLUICtrl*					mProjectorResY;
 
-	LLUICtrl*					mVignetteX;
-	LLUICtrl*					mVignetteY;
-	LLUICtrl*					mVignetteZ;
-
 	LLSliderCtrl*				mCameraAngle;
 
 

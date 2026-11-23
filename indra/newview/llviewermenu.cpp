@@ -9932,14 +9932,6 @@ void show_topinfobar_context_menu(LLView* ctrl, S32 x, S32 y)
     LLMenuGL::showPopup(ctrl, show_topbarinfo_context_menu, x, y);
 }
 
-namespace
-{
-	bool always_disable_menu()
-	{
-		return false;
-	}
-}
-
 //BD - Right Click Menu
 class LLAvatarRemoveFriend : public view_listener_t
 {

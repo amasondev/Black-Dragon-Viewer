@@ -231,6 +231,15 @@ std::string string_from_guid(const GUID &guid)
 
     return res;
 }
+#elif LL_DARWIN
+
+bool macos_devices_callback(std::string &product_name, LLSD &data, void* userdata)
+{
+    std::string product = data["product"].asString();
+
+    return LLViewerJoystick::getInstance()->initDevice(nullptr, product, data);
+}
+
 #endif
 
 // -----------------------------------------------------------------------------

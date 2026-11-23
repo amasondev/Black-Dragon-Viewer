@@ -59,7 +59,7 @@ NSOpenPanel *init_panel(const std::vector<std::string>* allowed_types, unsigned 
 
     if (fileTypes)
     {
-        [panel setAllowedFileTypes:fileTypes];
+        [panel setAllowedContentTypes:fileTypes];
     }
     else
     {
@@ -201,7 +201,7 @@ std::unique_ptr<std::string> doSaveDialog(const std::string* file,
         //[panel setMessage:@"Save Image File"];
         [panel setTreatsFilePackagesAsDirectories: ( flags & F_NAV_SUPPORT ) ];
         [panel setCanSelectHiddenExtension:true];
-        [panel setAllowedFileTypes:fileType];
+        [panel setAllowedContentTypes:fileType];
         NSString *fileName = [NSString stringWithCString:file->c_str() encoding:[NSString defaultCStringEncoding]];
 
         NSURL* url = [NSURL fileURLWithPath:fileName];
@@ -236,7 +236,7 @@ void doSaveDialogModeless(const std::string* file,
         //[panel setMessage:@"Save Image File"];
         [panel setTreatsFilePackagesAsDirectories: ( flags & F_NAV_SUPPORT ) ];
         [panel setCanSelectHiddenExtension:true];
-        [panel setAllowedFileTypes:fileType];
+        [panel setAllowedContentTypes:fileType];
         NSString *fileName = [NSString stringWithCString:file->c_str() encoding:[NSString defaultCStringEncoding]];
 
         NSURL* url = [NSURL fileURLWithPath:fileName];

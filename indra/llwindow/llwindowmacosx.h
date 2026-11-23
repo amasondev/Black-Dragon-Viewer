@@ -54,9 +54,13 @@ public:
     void minimize() override;
     void restore() override;
     bool getFullscreen();
+    bool getFullscreenWindow() override;
+    void setFullscreenWindow(bool fFullscreen) override;
     bool getPosition(LLCoordScreen *position) override;
+    bool getRestoredPosition(LLCoordScreen *position) override;
     bool getSize(LLCoordScreen *size) override;
     bool getSize(LLCoordWindow *size) override;
+    bool getRestoredSize(LLCoordScreen *size) override;
     bool setPosition(LLCoordScreen position) override;
     bool setSizeImpl(LLCoordScreen size) override;
     bool setSizeImpl(LLCoordWindow size) override;

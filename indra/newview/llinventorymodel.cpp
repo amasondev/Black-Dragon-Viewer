@@ -2796,7 +2796,7 @@ bool LLInventoryModel::loadSkeleton(
 			fp = NULL;
 
 			temp_text = "GUnzipping [FILE]";
-			temp_text.setArg("[FILE]", llformat("%s", gzip_filename));
+			temp_text.setArg("[FILE]", llformat("%s", gzip_filename.c_str()));
 
 			if(gunzip_file(gzip_filename, inventory_filename))
 			{

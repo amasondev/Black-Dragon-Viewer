@@ -219,8 +219,6 @@ protected:
     S32 mNumOrphans;
     S32 mNumAvatars;
 
-    typedef std::vector<LLPointer<LLViewerObject> > vobj_list_t;
-
 	vobj_list_t mObjects;
 	std::vector<LLPointer<LLViewerObject> > mActiveObjects;
 
@@ -248,6 +246,7 @@ protected:
     std::unordered_map<U64, LLUUID> mIndexAndLocalIDToUUID;
 
     friend class LLViewerObject;
+    friend class BDFloaterObjects;
 
 private:
     static void reportObjectCostFailure(LLSD &objectList);

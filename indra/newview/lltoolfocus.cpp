@@ -418,7 +418,7 @@ bool LLToolCamera::handleHover(S32 x, S32 y, MASK mask)
 	F32 zoom_factor = llclamp(LLViewerCamera::getInstance()->getView(), 0.2f, 1.f);
 
 //	//BD - Third Person Steering
-	if (hasMouseCapture() && mValidClickPoint || 
+	if ((hasMouseCapture() && mValidClickPoint) || 
 		(gAgentCamera.mThirdPersonSteeringMode &&
 		!gAgentCamera.cameraMouselook()) ||
 		mRightMouse)

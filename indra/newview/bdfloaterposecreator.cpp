@@ -37,7 +37,6 @@
 #include "llviewerjointattachment.h"
 #include "llviewerjoint.h"
 #include "llvoavatarself.h"
-#include "llwindowwin32.h"
 #include "pipeline.h"
 
 #include "llviewerobjectlist.h"
@@ -1822,8 +1821,8 @@ void BDFloaterPoseCreator::onJointControlsRefresh()
 		mModifierTabs->selectTab(0);
 	}
 	//BD - Swap out of "Scale" and "Rotation" tabs when they are not available.
-	if (curr_idx == 2 && !mModifierTabs->getTabButtonEnabled(2)
-		|| curr_idx == 0 && !mModifierTabs->getTabButtonEnabled(0))
+	if ((curr_idx == 2 && !mModifierTabs->getTabButtonEnabled(2))
+		|| (curr_idx == 0 && !mModifierTabs->getTabButtonEnabled(0)))
 	{
 		mModifierTabs->selectTab(1);
 	}

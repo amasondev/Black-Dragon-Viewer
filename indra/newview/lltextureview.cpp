@@ -60,9 +60,6 @@
 #include "llvoavatarself.h"
 #include "lltexlayer.h"
 
-#include "windows.h"
-#include "psapi.h"
-
 extern F32 texmem_lower_bound_scale;
 
 LLTextureView *gTextureView = NULL;
@@ -1194,5 +1191,3 @@ bool LLTextureView::handleKey(KEY key, MASK mask, bool called_from_parent)
 {
     return false;
 }
-
-

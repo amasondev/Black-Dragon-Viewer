@@ -802,7 +802,7 @@ bool BDFunctions::doLoadPreset(const std::string& path)
 // static
 std::string BDFunctions::getWindlightDir(std::string folder, bool system)
 {
-	if (folder.empty()) return NULL;
+	if (folder.empty()) return "";
 
 	ELLPath path_enum = system ? LL_PATH_APP_SETTINGS : LL_PATH_USER_SETTINGS;
 

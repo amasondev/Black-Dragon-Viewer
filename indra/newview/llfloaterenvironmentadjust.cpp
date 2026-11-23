@@ -434,7 +434,7 @@ void LLFloaterEnvironmentAdjust::captureCurrentEnvironment()
 void LLFloaterEnvironmentAdjust::onButtonReset()
 {
     LLNotificationsUtil::add("PersonalSettingsConfirmReset", LLSD(), LLSD(),
-        [this](const LLSD&notif, const LLSD&resp)
+        [](const LLSD&notif, const LLSD&resp)
     {
         S32 opt = LLNotificationsUtil::getSelectedOption(notif, resp);
         if (opt == 0)

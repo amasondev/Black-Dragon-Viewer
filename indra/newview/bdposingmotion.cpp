@@ -220,8 +220,9 @@ void BDPosingMotion::onDeactivate()
 //-----------------------------------------------------------------------------
 void BDPosingMotion::addJointToState(LLJoint *joint)
 {
-    if (!joint)
+    if (!joint) {
         return;
+    }
 
 	S32 i = joint->getJointNum();
 

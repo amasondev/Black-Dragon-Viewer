@@ -38,7 +38,6 @@
 #include "llviewerjointattachment.h"
 #include "llviewerjoint.h"
 #include "llvoavatarself.h"
-#include "llwindowwin32.h"
 #include "pipeline.h"
 #include "lltoolcomp.h"
 #include "llviewercontrol.h"

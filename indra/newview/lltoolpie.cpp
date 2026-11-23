@@ -419,8 +419,8 @@ bool LLToolPie::handleLeftClickPick()
 	static LLUICachedControl<bool> disallow_grab("DisallowLeftClickGrab", 0);
 	if (object && 
 		!object->isAvatar() &&
-		((object->flagUsePhysics() || (parent && !parent->isAvatar() 
-		&& parent->flagUsePhysics())) || touchable && !disallow_grab) 
+		(object->flagUsePhysics() || (parent && !parent->isAvatar()))
+		&& (parent->flagUsePhysics() || touchable) && !disallow_grab
 		)
 	{
 		gGrabTransientTool = this;

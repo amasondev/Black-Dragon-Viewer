@@ -1461,7 +1461,7 @@ bool LLViewerInput::exportBindingsXML(const std::string& filename)
 		//BD - Special Case to handle the left-click script trigger.
 		for (S32 it = 0, end_it = mLMouseDefaultHandling[i]; it < end_it; it++)
 		{
-			KEY key;
+            KEY key = {};
 			MASK mask = MASK_NONE;
 			LLSD record;
 			record["function"] = script_mouse_handler_name;

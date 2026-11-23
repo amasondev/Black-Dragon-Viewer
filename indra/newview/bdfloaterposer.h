@@ -75,10 +75,10 @@ public:
     static void unpackSyncPackage(std::string message, const LLUUID& id);
 
 private:
-	/*virtual*/	bool postBuild();
-	/*virtual*/ void draw();
-	/*virtual*/ void onOpen(const LLSD& key);
-	/*virtual*/	void onClose(bool app_quitting);
+	/*virtual*/	bool postBuild() override;
+	/*virtual*/ void draw() override;
+	/*virtual*/ void onOpen(const LLSD& key) override;
+	/*virtual*/	void onClose(bool app_quitting) override;
 
     void onFocusReceived() override;
 

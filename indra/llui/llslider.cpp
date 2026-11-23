@@ -217,7 +217,7 @@ bool LLSlider::handleHover(S32 x, S32 y, MASK mask)
 		//BD - UI Improvements
 		F32 val = llclamp(t * (mMaxValue - mMinValue) + mMinValue, mMinValue, mMaxValue);
 		if ((mOrientation == HORIZONTAL && delta.mV[VX] != 0)
-			|| mOrientation == VERTICAL && delta.mV[VY] != 0)
+			|| (mOrientation == VERTICAL && delta.mV[VY] != 0))
 		{
 			setValueAndCommit(val);
 		}

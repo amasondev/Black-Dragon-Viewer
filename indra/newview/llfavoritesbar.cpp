@@ -334,11 +334,11 @@ private:
 class LLFavoriteLandmarkToggleableMenu : public LLToggleableMenu
 {
 public:
-	virtual bool handleDragAndDrop(S32 x, S32 y, MASK mask, BOOL drop,
+	virtual bool handleDragAndDrop(S32 x, S32 y, MASK mask, bool drop,
 								   EDragAndDropType cargo_type,
 								   void* cargo_data,
 								   EAcceptance* accept,
-								   std::string& tooltip_msg)
+								   std::string& tooltip_msg) override
 	{
 		*accept = ACCEPT_NO;
 		return true;

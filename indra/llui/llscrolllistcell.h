@@ -125,7 +125,7 @@ public:
     virtual void            highlightText(S32 offset, S32 num_chars) {}
     virtual bool            isText() const { return false; }
     virtual bool            needsToolTip() const { return ! mToolTip.empty(); }
-    virtual void            setColor(const LLUIColor&) {}
+    virtual void            setColor(const LLColor4&) {}
     virtual void            onCommit() {};
 
     virtual bool            handleClick() { return false; }
@@ -303,7 +303,7 @@ class LLScrollListMultiSlider : public LLScrollListCell
 public:
 	LLScrollListMultiSlider(const LLScrollListCell::Params& p);
 	/*virtual*/ ~LLScrollListMultiSlider();
-	/*virtual*/ void	draw(const LLUIColor& color, const LLUIColor& highlight_color) const;
+	/*virtual*/ void	draw(const LLColor4& color, const LLColor4& highlight_color);
 	/*virtual*/ const LLSD		getValue() const;
 	/*virtual*/ void	setValue(const LLSD& value);
 

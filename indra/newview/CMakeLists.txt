@@ -533,8 +533,6 @@ set(viewer_SOURCE_FILES
     llpanelpulldown.cpp
     llpanelteleporthistory.cpp
     llpaneltiptoast.cpp
-    llpanelpulldown.cpp
-    llpanelvoicedevicesettings.cpp
     llpanelvolume.cpp
     llpanelvolumepulldown.cpp
     llpanelwearing.cpp
@@ -1222,8 +1220,6 @@ set(viewer_HEADER_FILES
     llpanelpulldown.h
     llpanelteleporthistory.h
     llpaneltiptoast.h
-    llpanelpulldown.h
-    llpanelvoicedevicesettings.h
     llpanelvolume.h
     llpanelvolumepulldown.h
     llpanelwearing.h

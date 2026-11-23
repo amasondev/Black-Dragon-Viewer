@@ -1,4 +1,5 @@
 # -*- cmake -*-
+include(Linking)
 include(Prebuilt)
 
 set(OPENJPEG_FIND_QUIETLY ON)
@@ -14,6 +15,13 @@ else (USESYSTEMLIBS)
     set(OPENJPEG_LIBRARIES 
         debug openjpegd
         optimized openjpeg)
+  elseif(DARWIN)
+    find_library(OPENJPEG_LIBRARY
+        NAMES
+        libopenjpeg.a
+        openjpeg
+        PATHS "${ARCH_PREBUILT_DIRS_RELEASE}" REQUIRED NO_DEFAULT_PATH)
+    set(OPENJPEG_LIBRARIES ${OPENJPEG_LIBRARY})
   else(WINDOWS)
     set(OPENJPEG_LIBRARIES openjpeg)
   endif(WINDOWS)

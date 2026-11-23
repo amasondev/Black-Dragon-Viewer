@@ -34,6 +34,6 @@ in vec2 vary_fragcoord;
 void main() 
 {
     vec2 tc = vary_fragcoord.xy;
-    vec4 diff = texture2D(diffuseRect, tc);
+    vec4 diff = texture(diffuseRect, tc);
     frag_color = diff;
 }

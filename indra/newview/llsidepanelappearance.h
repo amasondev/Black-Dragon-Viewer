@@ -93,10 +93,6 @@ private:
     
     LLButton*                   mOpenOutfitBtn;
     LLButton*                   mEditAppearanceBtn;
-    LLButton*                   mEditOutfitBtn = nullptr;
-    LLPanel*                    mCurrOutfitPanel;
-
-    LLLoadingIndicator*         mWearableLoadingIndicator = nullptr;
 
     LLTextBox*                  mCurrentLookName;
     LLTextBox*                  mOutfitStatus;

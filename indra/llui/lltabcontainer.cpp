@@ -562,7 +562,7 @@ void LLTabContainer::draw()
 									   top ? top - tuple->mButton->getRect().mTop : 0 );
 			if (top) top -= BTN_HEIGHT + tabcntrv_pad;
 
-			if (left >= 0 && !(mIsVertical && !left) || (has_scroll_arrows && left))
+			if (left >= 0 && (!(mIsVertical && !left) || (has_scroll_arrows && left)))
 			{
 				left += tuple->mButton->getRect().getWidth();
 			}

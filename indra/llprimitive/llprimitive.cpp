@@ -42,7 +42,7 @@
 #include "llsdutil.h"
 
 //BD - Disable Fullbrights
-#include "..\newview\llviewercontrol.h"
+#include "../newview/llviewercontrol.h"
 
 /**
  * exported constants

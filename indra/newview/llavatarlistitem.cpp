@@ -266,8 +266,9 @@ void LLAvatarListItem::setAvatarId(const LLUUID& id, const LLUUID& session_id, b
     mSpeakingIndicator->setSpeakerId(id, session_id);
 
     // We'll be notified on avatar online status changes
-    if (!ignore_status_changes && mAvatarId.notNull())
+    if (!ignore_status_changes && mAvatarId.notNull()) {
         LLAvatarTracker::instance().addParticularFriendObserver(mAvatarId, this);
+    }
 
 	//BD - Enable the developer tag if it's me.
 	if (LLAvatarTracker::instance().isDeveloper(id))

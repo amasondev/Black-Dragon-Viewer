@@ -800,7 +800,12 @@ bool LLViewerCamera::areVertsVisible(LLViewerObject* volumep, bool all_verts)
 extern bool gCubeSnapshot;
 
 // changes local camera and broadcasts change
-/* virtual */ void LLViewerCamera::setView(F32 vertical_fov_rads, bool debug)
+/* virtual */ void LLViewerCamera::setView(F32 vertical_fov_rads)
+{
+    setView(vertical_fov_rads, false);
+}
+
+void LLViewerCamera::setView(F32 vertical_fov_rads, bool debug)
 {
     if (debug) LL_INFOS("Camera_Debug") << "2-1" << LL_ENDL;
     llassert(!gCubeSnapshot);

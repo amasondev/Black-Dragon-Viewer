@@ -31,11 +31,11 @@ class QToolAlign
 	virtual ~QToolAlign();
 public:
 
-	virtual void	handleSelect();
-	virtual void	handleDeselect();
-	virtual bool	handleMouseDown(S32 x, S32 y, MASK mask);
-	virtual bool    handleHover(S32 x, S32 y, MASK mask);
-	virtual void	render();
+	/*virtual*/ void	handleSelect() override;
+	/*virtual*/ void	handleDeselect() override;
+	/*virtual*/ bool	handleMouseDown(S32 x, S32 y, MASK mask) override;
+	/*virtual*/ bool    handleHover(S32 x, S32 y, MASK mask) override;
+	/*virtual*/ void	render() override;
 	virtual bool	canAffectSelection();
 
 	static void pickCallback(const LLPickInfo& pick_info);

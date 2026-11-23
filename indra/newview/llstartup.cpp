@@ -506,7 +506,8 @@ bool idle_startup()
         if (gSavedSettings.getBOOL("RenderVSyncEnable"))
         {
             LL_INFOS("Window") << "Temporarily disabling vertical sync" << LL_ENDL;
-            wglSwapIntervalEXT(0);
+			// TODO: platform agnostic call
+            //wglSwapIntervalEXT(0);
         }
 		
         static bool first_call = true;
@@ -2645,7 +2646,8 @@ bool idle_startup()
 		if (gSavedSettings.getBOOL("RenderVSyncEnable"))
 		{
 			LL_INFOS("Window") << "Re-enabling vertical sync" << LL_ENDL;
-			wglSwapIntervalEXT(1);
+			// TODO: platform agnostic call
+			//wglSwapIntervalEXT(1);
 		}
 
 		return true;

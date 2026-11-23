@@ -213,13 +213,10 @@ private:
     LLSaveFolderState*          mSavedFolderState;
     std::string                 mFilterText;
     std::string                 mFilterSubString;
-    S32                         mItemCount = 0;
     std::string                 mLastFilterText;
     std::string                 mItemCountString;
-    S32                         mCategoryCount = 0;
     std::string                 mCategoryCountString;
     LLComboBox*                 mSearchTypeCombo;
-    EFetchState                 mLastFetchState{ EFetchState::Unknown };
 
     LLButton* mBackBtn;
     LLButton* mForwardBtn;

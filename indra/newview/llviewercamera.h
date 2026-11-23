@@ -86,7 +86,8 @@ public:
     LLVector3 roundToPixel(const LLVector3 &pos_agent);
 
     // Sets the current matrix
-    /* virtual */ void setView(F32 vertical_fov_rads, bool debug = false); // NOTE: broadcasts to simulator
+    /* virtual */ void setView(F32 vertical_fov_rads) override; // NOTE: broadcasts to simulator
+    void setView(F32 vertical_fov_rads, bool debug);
     void setViewNoBroadcast(F32 vertical_fov_rads);  // set FOV without broadcasting to simulator (for temporary local cameras)
     F32 getDefaultFOV() const { return mCameraFOVDefault; }
     void setDefaultFOV(F32 fov) ;

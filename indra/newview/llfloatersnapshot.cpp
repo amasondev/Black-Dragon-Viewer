@@ -542,8 +542,9 @@ void LLFloaterSnapshot::setResolution(const std::string& comboname)
 // virtual
 void LLFloaterSnapshot::updateControls()
 {
-    if (!getVisible())
+    if (!getVisible()) {
         return;
+    }
 
 	LLSnapshotModel::ESnapshotType shot_type = getActiveSnapshotType();
 	LLSnapshotModel::ESnapshotFormat shot_format = (LLSnapshotModel::ESnapshotFormat)gSavedSettings.getS32("SnapshotFormat");

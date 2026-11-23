@@ -152,7 +152,6 @@ private:
 	LLGroupList*			mGroupList;
 
 	LLTextBox*				mGroupCount = nullptr;
-	LLUICtrl*				mGroupMinusBtn = nullptr;
 	LLUICtrl*				mFriendGearBtn = nullptr;
 	LLUICtrl*				mNearbyGearBtn = nullptr;
 	LLUICtrl*				mRecentGearBtn = nullptr;

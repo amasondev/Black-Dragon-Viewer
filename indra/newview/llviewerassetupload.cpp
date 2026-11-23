@@ -970,8 +970,9 @@ void LLViewerAssetUpload::AssetInventoryUploadCoproc(LLCoreHttpUtil::HttpCorouti
     }
 
     // remove the "Uploading..." message
-    if (uploadInfo->showUploadDialog())
+    if (uploadInfo->showUploadDialog()) {
         LLUploadDialog::modalUploadFinished();
+    }
 
     // Let the Snapshot floater know we have finished uploading a snapshot to inventory
 	LLFloaterSnapshot* floater_snapshot = LLFloaterSnapshot::findInstance();

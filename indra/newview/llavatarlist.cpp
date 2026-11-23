@@ -176,8 +176,9 @@ void LLAvatarList::draw()
         updateAvatarNames();
     }
 
-    if (mDirty)
+    if (mDirty) {
         refresh();
+    }
 
 	//BD
 	if (mExtraDataUpdatePeriod && mExtraDataUpdateTimer->hasExpired())

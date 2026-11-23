@@ -62,14 +62,14 @@ public:
     /*virtual*/ bool getCursorPosition(LLCoordWindow *position) override {return false;}
 
 // [SL:KB] - Patch: Viewer-FullscreenWindow | Checked: 2010-04-13 (Catznip-2.1.2a) | Added: Catznip-2.0.0a
-	/*virtual*/ bool getFullscreenWindow() { return false; };
-	/*virtual*/ void setFullscreenWindow(bool fFullscreen) {};
+	/*virtual*/ bool getFullscreenWindow() override { return false; };
+	/*virtual*/ void setFullscreenWindow(bool fFullscreen) override {};
 // [/SL:KB]
 // [SL:KB] - Patch: Viewer-FullscreenWindow | Checked: 2010-08-26 (Catznip-2.1.2a) | Added: Catznip-2.1.2a
-	/*virtual*/ bool getRestoredPosition(LLCoordScreen *position) { return false; };
+	/*virtual*/ bool getRestoredPosition(LLCoordScreen *position) override { return false; };
 // [/SL:KB]
 // [SL:KB] - Patch: Viewer-FullscreenWindow | Checked: 2010-08-26 (Catznip-2.1.2a) | Added: Catznip-2.1.2a
-	/*virtual*/ bool getRestoredSize(LLCoordScreen *size) { return false; };
+	/*virtual*/ bool getRestoredSize(LLCoordScreen *size) override { return false; };
 // [/SL:KB]
 #if LL_WINDOWS
     /*virtual*/ bool getCursorDelta(LLCoordCommon* delta) override { return false; }

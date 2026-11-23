@@ -118,7 +118,6 @@ private:
 
 	LLIconCtrl  *mIconPresets;
 	LLButton	*mBtnVolume;
-	LLTextBox	*mBoxBalance;
 	LLButton	*mMediaToggle;
 	LLFrameTimer	mClockUpdateTimer;
 //	//BD - Quick Draw Distance Slider

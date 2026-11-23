@@ -968,6 +968,15 @@ bool LLWindowMacOSX::getFullscreen()
     return mFullscreen;
 }
 
+bool LLWindowMacOSX::getFullscreenWindow()
+{
+    return false;
+}
+
+void LLWindowMacOSX::setFullscreenWindow(bool fFullscreen)
+{
+}
+
 void LLWindowMacOSX::gatherInput()
 {
     updateCursor();
@@ -1052,6 +1061,16 @@ bool LLWindowMacOSX::getSize(LLCoordWindow *size)
     }
 
     return (err == noErr);
+}
+
+bool LLWindowMacOSX::getRestoredPosition(LLCoordScreen *position)
+{
+    return getPosition(position);
+}
+
+bool LLWindowMacOSX::getRestoredSize(LLCoordScreen *size)
+{
+    return getSize(size);
 }
 
 bool LLWindowMacOSX::setPosition(const LLCoordScreen position)
@@ -2379,7 +2398,7 @@ bool LLWindowMacOSX::getInputDevices(U32 device_type_filter,
     io_iterator_t io_iter = 0;
 
     // create an IO object iterator
-    result = IOServiceGetMatchingServices( kIOMasterPortDefault, device_dict_ref, &io_iter );
+    result = IOServiceGetMatchingServices( kIOMainPortDefault, device_dict_ref, &io_iter );
     if ( kIOReturnSuccess != result )
     {
         LL_WARNS("Joystick") << "IOServiceGetMatchingServices failed" << LL_ENDL;

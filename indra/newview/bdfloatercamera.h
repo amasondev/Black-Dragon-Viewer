@@ -23,8 +23,6 @@
 #include "lltextbox.h"
 #include "llagentpilot.h"
 
-class LLAgentPilot::Action;
-
 class BDFloaterCamera :
 	public LLFloater
 {

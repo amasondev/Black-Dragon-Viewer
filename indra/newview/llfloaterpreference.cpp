@@ -131,8 +131,6 @@
 #include "llfiltereditor.h"
 #include "llnamelistctrl.h"
 #include "llmenugl.h"
-//BD - Open Log Path
-#include <shellapi.h>
 
 #include <string>
 #include <iostream>
@@ -141,8 +139,6 @@
 #include <utility>
 
 #include "llperfstats.h"
-
-#include <dxgi1_4.h>
 
 const F32 BANDWIDTH_UPDATER_TIMEOUT = 0.5f;
 char const* const VISIBILITY_DEFAULT = "default";
@@ -193,7 +189,7 @@ bool LLPanelVoiceDeviceSettings::postBuild()
 }
 
 // virtual
-void LLPanelVoiceDeviceSettings::onVisibilityChange ( BOOL new_visibility )
+void LLPanelVoiceDeviceSettings::onVisibilityChange ( bool new_visibility )
 {
 	if (new_visibility)
 	{
@@ -648,7 +644,7 @@ bool LLSetKeyDialog::handleKeyHere(KEY key, MASK mask)
 	{
 		mMask = MASK_NONE;
 	}
-	else if (mask != MASK_NONE && mask != NULL)
+	else if (mask != MASK_NONE)
 	{
 		mMask = mask;
 	}
@@ -754,7 +750,7 @@ void LLSetKeyDialog::onCancel()
 
 void LLSetKeyDialog::onBind()
 {
-	if (mParent && (mKey != NULL || mMouse != CLICK_NONE) && !mAction == NULL)
+	if (mParent && (mKey != 0 || mMouse != CLICK_NONE) && mAction)
 	{
 		mParent->onAddBind(mKey, mMouse, mMask, mAction);
 		this->closeFloater();
@@ -831,13 +827,13 @@ void LLChangeKeyDialog::onOpen(const LLSD& key)
 	LLUICtrl* old_ctrl = getChild<LLUICtrl>("old_key_display");
 	LLUICtrl* ctrl = getChild<LLUICtrl>("key_display");
 
-	if (mKey != NULL)
+	if (mKey != 0)
 		old_ctrl->setTextArg("[KEY]", gKeyboard->stringFromKey(mKey));
 	else
 		old_ctrl->setTextArg("[KEY]", gViewerInput.stringFromMouse(mMouse, true));
 	old_ctrl->setTextArg("[MASK]", gKeyboard->stringFromMask(mMask));
 
-	mKey = NULL;
+	mKey = 0;
 	mMouse = CLICK_NONE;
 	mMask = MASK_NONE;
 
@@ -860,7 +856,7 @@ bool LLChangeKeyDialog::handleKeyHere(KEY key, MASK mask)
 	{
 		mMask = MASK_NONE;
 	}
-	else if (mask != MASK_NONE && mask != NULL)
+	else if (mask != MASK_NONE)
 	{
 		mMask = mask;
 	}
@@ -951,7 +947,7 @@ void LLChangeKeyDialog::onCancel()
 
 void LLChangeKeyDialog::onBind()
 {
-	if (mParent && (mKey != NULL || mMouse != CLICK_NONE))
+	if (mParent && (mKey != KEY_NONE || mMouse != CLICK_NONE))
 	{
 		mParent->onReplaceBind(mKey, mMouse, mMask);
 	}
@@ -1816,12 +1812,14 @@ void LLFloaterPreference::onOpen(std::string path)
 	if (path.empty())
 		return;
 
+#if LL_WINDOWS
     std::wstring url_utf16 = ll_convert<std::wstring>(path);
 	SHELLEXECUTEINFO sei = { sizeof(sei) };
 	sei.nShow = SW_SHOWNORMAL;
 	sei.lpVerb = L"open";
 	sei.lpFile = url_utf16.c_str();
 	ShellExecuteEx(&sei);
+#endif
 }
 
 //BD - Expandable Tabs
@@ -3217,7 +3215,7 @@ void LLFloaterPreference::onLanguageChange()
 void LLFloaterPreference::onNotificationsChange(const std::string& OptionName)
 {
 	//BD
-	mNotificationOptions[OptionName] = getChild<LLRadioGroup>(OptionName)->getSelectedValue();
+	mNotificationOptions[OptionName] = getChild<LLRadioGroup>(OptionName)->getSelectedValue().asString();
 
 	bool show_notifications_alert = true;
 	for (notifications_map::iterator it_notification = mNotificationOptions.begin(); it_notification != mNotificationOptions.end(); it_notification++)

@@ -84,6 +84,9 @@ class ViewerManifest(LLManifest):
                 # ... and the entire image filters directory
                 self.path("filters")
 
+                # ... and the entire camera presets directory
+                self.path("camera")
+
                 # ... and the included spell checking dictionaries
                 pkgdir = os.path.join(self.args['build'], os.pardir, 'packages')
                 with self.prefix(src=pkgdir):
@@ -1059,17 +1062,17 @@ class Darwin_x86_64_Manifest(ViewerManifest):
                     self.path2basename(relpkgdir, libfile)
 
                 # Fmod studio dylibs (vary based on configuration)
-                if self.args['fmodstudio'] == 'ON':
-                    if self.args['buildtype'].lower() == 'debug':
-                        for libfile in (
-                                    "libfmodL.dylib",
-                                    ):
-                            dylibs += path_optional(os.path.join(debpkgdir, libfile), libfile)
-                    else:
-                        for libfile in (
-                                        "libfmod.dylib",
-                                    ):
-                            dylibs += path_optional(os.path.join(relpkgdir, libfile), libfile)
+                #if self.args['fmodstudio'] == 'ON':
+                #    if self.args['buildtype'].lower() == 'debug':
+                #        for libfile in (
+                #                    "libfmodL.dylib",
+                #                    ):
+                #            dylibs += path_optional(os.path.join(debpkgdir, libfile), libfile)
+                #    else:
+                #        for libfile in (
+                #                        "libfmod.dylib",
+                #                    ):
+                #            dylibs += path_optional(os.path.join(relpkgdir, libfile), libfile)
                             
                 # Discord social SDK
                 if self.args['discord'] == 'ON':
